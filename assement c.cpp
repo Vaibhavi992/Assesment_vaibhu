@@ -1,4 +1,23 @@
 #include<stdio.h>
+void addition(int no1,int no2)
+{
+	printf("%d is addition",no1+no2);
+}
+void substraction(int no1,int no2)
+{
+	printf("%d is substraction",no1-no2);
+}
+void multiplication(int no1,int no2)
+{
+	printf("%d is multiplication",no1*no2);
+}
+void division(int no1,int no2)
+{
+	printf("%d is division",no1/no2);
+}
+
+
+
 int main()
 {
 	char yes;
@@ -18,20 +37,16 @@ int main()
 		switch(choice)
 		{
 			case(1):
-				c=a+b;
-				printf("%d+%d=%d\n",a,b,c);
+				addition(a,b);
 				break;
 			case(2):
-			    c=a-b;
-				printf("%d-%d=%d\n",a,b,c);
+			    substraction(a,b);
 				break;
 			case(3):
-			    c=a*b;
-				printf("%d*%d=%d\n",a,b,c);
+			    multiplication(a,b);
 				break;
 			case(4):
-			    c=a/b;
-				printf("%d/%d=%d\n",a,b,c);
+			    division(a,b);
 				break;
 			default:
 			    printf("Invalid choice!!!\n");				
