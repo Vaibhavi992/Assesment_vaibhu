@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration-form</title>
+    <link rel="Icon" href="download.jpg">
+    <link rel="stylesheet" href="02.Registration-form.css">
+    <script src="validation.js"></script>
+</head>
+<body>
+    <div id="one">
+        <u>Student Registration Form</u>
+    </div>
+
+    <div id="two">
+        <form id="registrationForm" onclick="return validateForm()"><br>       
+        <label class="one">First Name:</label>
+        <input type="text" placeholder="Enter Your first name" pattern="[a-zA-Z]{4,6}" minlength="4" maxlength="6" required id="inp1"><br>
+          
+        <label class="one">Last Name:</label>
+        <input type="text" placeholder="Enter Your Last name" pattern="[a-zA-Z]{4,6}" minlength="4" maxlength="6" required id="inp2"><br>
+           
+        <label class="one">Email:</label>
+        <input type="email" placeholder="it should contain @.." required id="inp3"><br>
+
+        <label class="one">Mobile:</label>
+        <input type="number" placeholder="only 10 digits are allowed" minlength="9" maxlength="10" pattern="[0-9]{10}" id="inp4" required><br>
+
+        <label class="one">Gender:</label>
+        <input type="radio" name="a" id="inp5">Male
+        <input type="radio" name="a">Female<br>
+            
+        <label class="one">Date Of Birth:</label>
+        <input type="date" id="inp6"><br>
+            
+        <label class="one">Address:</label>
+        <textarea name="" id="inp7"></textarea><br>
+                
+        <label class="one">City:</label>
+        <input type="text" required id="inp8"><br>
+            
+        <label class="one">Area PIN:</label>
+        <input type="text" required id="inp9"><br>
+            
+        <label class="one">State:</label>
+        <input type="text" required id="inp10"><br>
+            
+        <label class="one">Qualification:</label>
+        <select id="inp11">
+            <option selected="selected" disabled="disabled">Select Qualifications</option>
+            <option>123</option>
+            <option>456</option>
+            <option>789</option>
+        </select><br>
+            
+        <label class="one">Specialization:</label>
+        <input type="checkbox" id="inp12">Computer Science<br>
+        <input type="checkbox" class="inp12">Information Technology<br>
+        <input type="checkbox" class="inp12">Computer Architecture<br>
+        <input type="checkbox" class="inp12">Tele Comunication<br>
+          
+        <label class="one">Password:</label>
+        <input type="password" id="inp13"><br>
+            
+        <button type="submit"onclick="validateForm()" id="inp14">Register</button>
+        </form>
+    </div>
+</body>
+</html>
