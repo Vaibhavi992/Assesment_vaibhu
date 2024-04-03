@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date And Time</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<!-- -------style -->
+<style>
+    .main {
+        width: 50%;
+        margin: 0 auto;
+        height: 400px;
+       
+    }
+
+    h2 {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    #calculate {
+        margin-top: 20px;
+        margin-left: 20px;
+        background-color: rgb(36, 124, 196);
+        color: white
+    }
+    .dt-text{
+        width: 40%;
+        background-color: rgb(36, 124, 196);;
+        color: aliceblue;
+    }
+</style>
+
+<body>
+    <!-- formating-------- -->
+    <div class="main">
+        <div class="text">
+            <h2>Date Intarval</h2>
+        </div>
+        <table class="table">
+            <tr>
+                <td>
+                    <label for="fromdate">From:</label>
+                    <input type="date" id="fromdate"><br><br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="todate">To:</label>
+                    <input type="date" id="todate"><br>
+                </td>
+            </tr>
+
+        </table>
+
+        <button id="calculate">Caluculate</button>
+        <div class="dt-text">
+            <p id="dt">Date Interval between<span id="fromdatedisplay"></span> and <span id="todatedisplay"></span></p>
+            <p>In Year:<span id="year"></span></p>
+            <p>In Month:<span id="months"></span></p>
+            <p>In week:<span id="weeks"></span></p>
+            <p>In days:<span id="days"></span></p>
+        </div>
+    </div>
+    <!-- ------- to calculate------- -->
+    <script>
+        $(document).ready(function () {
+            $("#calculate").click(function () {
+                var fromdate = new Date($("#fromdate").val());
+                var todate = new Date($("#todate").val());
+
+                var counting = todate - fromdate;
+
+                var year = Math.floor(counting / (360.25 * 24 * 60 * 60 * 1000));
+                var Months = Math.floor(counting / (30.44 * 24 * 60 * 60 * 1000));
+                var weeks = Math.floor(counting / (7 * 24 * 60 * 60 * 1000));
+                var days = Math.floor(counting / (24 * 60 * 60 * 1000));
+
+                $("#year").text(year); 5
+                $("#months").text(Months);
+                $("#weeks").text(weeks);
+                $("#days").text(days);
+            })
+        });
+    </script>
+</body>
+
+</html>
