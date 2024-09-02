@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: 300px;
+  background-color: #222;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+
+
+}
+
+input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  margin: 5px 5px;
+  border: none;
+  background-color: #fff;
+  color: #222;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  margin: 8px 5px;
+  border: none;
+  cursor: pointer;
+  width: 25%;
+  opacity: 0.9;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 1;
+}
+
+.todo-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.todo-list li {
+  background-color: #fff;
+  color: #222;
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  
+  <h2>New List Item</h2>
+
+  <div class="input-container">
+    <input type="text" id="newTodo" placeholder="Add new">
+    <button onclick="addTodo()">Add</button>
+    <button onclick="clearTodos()">Clear</button>
+  </div>
+  <ul class="todo-list" id="todoList">
+    <li>Read a book <button onclick="deleteTodo(this)">Delete</button></li>
+    <li>Lunch with Caro <button onclick="deleteTodo(this)">Delete</button></li>
+    <li>Feed the dog <button onclick="deleteTodo(this)">Delete</button></li>
+  </ul>
+  
+</div>
+
+<script>
+function addTodo() {
+  var newTodo = document.getElementById("newTodo").value;
+  
+  if (newTodo !== "") {
+    var li = document.createElement("li");
+    li.textContent = newTodo;
+    var deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.onclick = function() {
+      deleteTodo(this);
+    }
+    li.appendChild(deleteButton);
+    document.getElementById("todoList").appendChild(li);
+    document.getElementById("newTodo").value = "";
+  } else {
+    alert("Please enter a task");
+  }
+}
+
+function clearTodos() {
+  document.getElementById("todoList").innerHTML = "";
+}
+
+function deleteTodo(element) {
+  element.parentNode.remove();
+}
+</script>
+
+</body>
+</html>
